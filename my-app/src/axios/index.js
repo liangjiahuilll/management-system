@@ -5,3 +5,10 @@ export const getData=()=>{
     method:'get'
   })
 }
+export const getUser=(param)=>{
+  return http.request({
+    url:'/user/getUser',
+    method:'get',
+    param:param
+  })
+}
