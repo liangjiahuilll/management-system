@@ -12,3 +12,35 @@ export const getUser=(param)=>{
     param:param
   })
 }
+
+export const addUser=(data)=>{
+  return http.request({
+    url:'/user/addUser',
+    method:'post',
+    data:data
+  })
+}
+
+export const editUser=(data)=>{
+  return http.request({
+    url:'/user/editUser',
+    method:'post',
+    data:data
+  })
+}
+
+export const deleteUser=(data)=>{
+  return http.request({
+    url:'/user/deleteUser',
+    method:'post',
+    data:data
+  })
+}
+
+export const getMenu=(data)=>{
+  return http.request({
+    url:'/permission/getMenu',
+    method:'post',
+    data:data
+  })
+}

@@ -3,6 +3,8 @@ import MenuConfig from '../../config'
 import * as Icon from '@ant-design/icons'
 import {  Layout, Menu } from 'antd'
 import {useNavigate} from 'react-router-dom'
+import { selectMenuList } from "../../store/reducers/teb";
+import { useDispatch } from "react-redux";
 
 
 
@@ -29,7 +31,31 @@ const items=MenuConfig.map((icon)=>{
 
 const CommonAside=({collapsed})=>{
   const navigate=useNavigate()
+  const dispatch=useDispatch()
+  const setTabList=(val)=>{
+    dispatch(selectMenuList(val))
+  }
+  // 点击菜单
   const selectMenu=(e)=>{
+    console.log(e.keyPath)
+    let data
+    MenuConfig.forEach(item=>{
+      // 找到当前数据
+      if(item.path===e.keyPath[e.keyPath.length-1]){
+        data=item
+        // 如果有二级菜单
+        if(e.keyPath.length>1){
+          data=item.children.find(child=>{
+            return child.path===e.key
+          })
+        }
+      }
+    })
+    setTabList({
+      path:data.path,
+      name:data.name,
+      label:data.label
+    })
     navigate(e.key)
   }
   return (
