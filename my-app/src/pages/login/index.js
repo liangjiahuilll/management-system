@@ -9,6 +9,9 @@ const Login = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   if (localStorage.getItem('token')) {
+    let menu = localStorage.getItem('menu')
+    console.log(JSON.parse(menu))
+    dispatch(selectMenu(JSON.parse(menu)))
     return <Navigate to="/home" replace />
   }
 
@@ -30,6 +33,8 @@ const Login = () => {
       } else {
         dispatch(selectMenu(data.data.menu))
         localStorage.setItem('token', data.data.token)
+        let menu = JSON.stringify(data.data.menu)
+        localStorage.setItem('menu', menu)
         navigate('/home')
       }
     })
