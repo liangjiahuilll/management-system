@@ -7,14 +7,14 @@ import { collapseMenu } from '../../store/reducers/teb'
 import { useNavigate } from 'react-router-dom'
 const { Header, Content } = Layout
 
-const CommonHeader = ({collapsed}) => {
-  const dispatch=useDispatch()
-  const navigate=useNavigate()
-  const setcollapsed=()=>{
+const CommonHeader = ({ collapsed }) => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const setcollapsed = () => {
     dispatch(collapseMenu(collapsed))
   }
   // 退出登录
-  const logout=()=>{
+  const logout = () => {
     // 清除token
     localStorage.removeItem('token')
     navigate('/login')

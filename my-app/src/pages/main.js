@@ -1,16 +1,13 @@
-// import React from 'react'
-// import { Outlet } from 'react-router-dom'
-import React, { useEffect } from 'react'
-import { Button, Layout, theme } from 'antd'
+import { Layout, theme } from 'antd'
 import CommonAside from '../components/commonAside'
 import CommonHeader from '../components/commonHeader'
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
-import { getData } from '../axios'
+
 import CommonTag from '../components/commonTag'
 import { RouterAuth } from '../router/routerAuth'
 
-const { Header, Content } = Layout
+const { Content } = Layout
 
 const Main = () => {
   const collapsed = useSelector((state) => state.teb.isCollapse)

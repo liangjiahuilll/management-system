@@ -1,46 +1,46 @@
 import http from './axios'
-export const getData=()=>{
+export const getData = () => {
   return http.request({
-    url:'/home/getData',
-    method:'get'
+    url: '/home/getData',
+    method: 'get',
   })
 }
-export const getUser=(param)=>{
+export const getUser = (params) => {
   return http.request({
-    url:'/user/getUser',
-    method:'get',
-    param:param
-  })
-}
-
-export const addUser=(data)=>{
-  return http.request({
-    url:'/user/addUser',
-    method:'post',
-    data:data
+    url: '/user/getUser',
+    method: 'get',
+    params: params,
   })
 }
 
-export const editUser=(data)=>{
+export const addUser = (data) => {
   return http.request({
-    url:'/user/editUser',
-    method:'post',
-    data:data
+    url: '/user/addUser',
+    method: 'post',
+    data: data,
   })
 }
 
-export const deleteUser=(data)=>{
+export const editUser = (data) => {
   return http.request({
-    url:'/user/deleteUser',
-    method:'post',
-    data:data
+    url: '/user/editUser',
+    method: 'post',
+    data: data,
   })
 }
 
-export const getMenu=(data)=>{
+export const deleteUser = (data) => {
   return http.request({
-    url:'/permission/getMenu',
-    method:'post',
-    data:data
+    url: '/user/deleteUser',
+    method: 'post',
+    data: data,
+  })
+}
+
+export const getMenu = (data) => {
+  return http.request({
+    url: '/permission/getMenu',
+    method: 'post',
+    data: data,
   })
 }

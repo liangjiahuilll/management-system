@@ -10,45 +10,44 @@ export default {
         data: {
           menu: [
             {
-              path: '/home',
-              name: 'home',
-              label: '首页',
-              icon: 's-home',
-              url: 'home/index'
+                path: '/home',
+                name: 'home',
+                label: '首页',
+                icon: 'HomeOutlined',
+                url: '/home/index'
             },
             {
-              path: '/mall',
-              name: 'mall',
-              label: '商品管理',
-              icon: 'video-play',
-              url: 'mall/index'
+                path: '/mall',
+                name: 'mall',
+                label: '商品管理',
+                icon: 'ShopOutlined',
+                url: '/mall/index'
             },
             {
-              path: '/user',
-              name: 'user',
-              label: '用户管理',
-              icon: 'user',
-              url: 'User/index'
+                path: '/user',
+                name: 'user',
+                label: '用户管理',
+                icon: 'UserOutlined',
+                url: '/user/index'
             },
             {
-              label: '其他',
-              icon: 'location',
-              children: [
+                path: '/other',
+                label: '其他',
+                icon: 'SettingOutlined',
+                children: [
                 {
-                  path: '/page1',
-                  name: 'page1',
-                  label: '页面1',
-                  icon: 'setting',
-                  url: 'other/pageOne.vue'
+                    path: '/other/pageOne',
+                    name: 'page1',
+                    label: '页面1',
+                    icon: 'SettingOutlined'
                 },
                 {
-                  path: '/page2',
-                  name: 'page2',
-                  label: '页面2',
-                  icon: 'setting',
-                  url: 'other/pageTwo.vue'
+                    path: '/other/pageTwo',
+                    name: 'page2',
+                    label: '页面2',
+                    icon: 'SettingOutlined'
                 }
-              ]
+                ]
             }
           ],
           token: Mock.Random.guid(),
@@ -61,19 +60,19 @@ export default {
         data: {
           menu: [
             {
-              path: '/',
+              path: '/home',
               name: 'home',
               label: '首页',
-              icon: 's-home',
-              url: 'home/index'
-            },
-            {
-              path: '/video',
-              name: 'video',
+              icon: 'HomeOutlined',
+              url: '/home/index'
+          },
+          {
+              path: '/mall',
+              name: 'mall',
               label: '商品管理',
-              icon: 'video-play',
-              url: 'mall/index'
-            }
+              icon: 'ShopOutlined',
+              url: '/mall/index'
+          },
           ],
           token: Mock.Random.guid(),
           message: '获取成功'

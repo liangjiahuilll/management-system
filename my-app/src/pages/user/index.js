@@ -29,7 +29,6 @@ const User = () => {
     }
   }
 
-  
   // 搜索
   const handleFinish = (e) => {
     setlistData({
@@ -39,9 +38,9 @@ const User = () => {
     console.log(listData)
   }
   console.log(listData)
-  useEffect(()=>{
+  useEffect(() => {
     getTableData()
-  },[listData])
+  }, [listData])
 
   const handleDlete = ({ id }) => {
     deleteUser({ id }).then(() => {
@@ -50,12 +49,14 @@ const User = () => {
   }
 
   const getTableData = () => {
-    getUser(listData).then(({ data }) => {
-      console.log(data.list)
-      settableData(data.list)
-    }).catch((err) => {
-      console.log(err)
-    })
+    getUser(listData)
+      .then(({ data }) => {
+        console.log(data.list)
+        settableData(data.list)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   // 弹窗确认
